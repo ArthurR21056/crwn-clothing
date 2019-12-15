@@ -6,12 +6,12 @@ import './sign-in.styles.scss'
 
 import { signInWithGoogle } from '../../firebase/firebase.utils'
 class SignIn extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
 
         this.state = {
-            email:'',
-            password:''
+            email: '',
+            password: ''
         }
     }
 
@@ -23,36 +23,34 @@ class SignIn extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        this.setState({email: "", password: ""})
+        this.setState({ email: "", password: "" })
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className='sign-in'>
                 <h2>I already have an account</h2>
                 <span>Sign in with your email and password</span>
 
                 <form onSubmit={this.handleSubmit}>
-                    <FormInput 
+                    <FormInput
                         label="Email"
-                        name='email' 
-                        type='email' 
+                        name='email'
+                        type='email'
                         handleChange={this.handleChange}
-                        value={this.state.email} 
-                        required/>
-                    <FormInput 
+                        value={this.state.email}
+                        required />
+                    <FormInput
                         label="Password"
-                        name='password' 
-                        type='password' 
+                        name='password'
+                        type='password'
                         handleChange={this.handleChange}
-                        value={this.state.password} 
-                        required/>
-                    <CustomButton type="submit"> Sign In </CustomButton>
-                    <CustomButton 
-                        onClick={signInWithGoogle}
-                        style={{
-                            backGroundcolor: 'blue'
-                        }}>Sign in with Google </CustomButton>
+                        value={this.state.password}
+                        required />
+                    <div className='buttons'>
+                        <CustomButton type="submit"> Sign In </CustomButton>
+                        <CustomButton isGoogleSignIn onClick={signInWithGoogle}>Sign in with Google </CustomButton>
+                    </div>
                 </form>
 
             </div>
