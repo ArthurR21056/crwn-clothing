@@ -9,19 +9,17 @@ import CustomButton from '../custom-button/custom-button.component';
 
 const CartDropdown = ({cartItems}) => (
     <div className='cart-dropdown'>
-        {/* <div className='cart-items'>
+        <div className='cart-items'>
             {
                 cartItems.map(cartItem => (<CartItem key={cartItem.id} item={cartItem}/>
             ))}
-        </div> */}
+        </div>
         <CustomButton>GO TO CHECKOUT</CustomButton>
     </div>
 )
 
-// const mapStateToProps = ({cart: {cartItems} }) => ({
-//     cartItems
-// })
+const mapStateToProps = ({cart: {cartItems} }) => ({
+    cartItems
+})
 
-// export default connect(mapStateToProps)(CartDropdown);
-
-export default CartDropdown;
+export default connect(mapStateToProps)(CartDropdown);
