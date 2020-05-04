@@ -16,7 +16,7 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 export const reduceItemQuantity = (cartItems, cartItemToReduce) => {
     const existingCartItem = cartItems.find(cartItem => cartItem.id === cartItemToReduce.id);
 
-    if(existingCartItem.quantity == 1){
+    if(existingCartItem.quantity === 1){
         return cartItems.filter(cartItem => cartItem.id  !== existingCartItem.id);
     }
     else{
